@@ -1,0 +1,21 @@
+<div class="container" style="width: 60%; margin: auto;"> 
+    <h1 style="text-align: center;">Login Here</h1>
+    <br>
+        <form  [formGroup]="loginForm" (ngSubmit)="logindata(loginForm)">
+            <div class="input-group mb-3">
+    
+                <input type="email" class="form-control" placeholder="Email" formControlName="email"/>
+                </div>
+               
+    
+                <div class="input-group mb-3" >
+    
+                    <input type="text" class="form-control" placeholder="password" formControlName="password"/>
+                    </div>
+                  
+                        <button type="submit" class="btn btn-primary" style="margin-left: 30%;" >submit</button>
+                        <button type="submit" style="margin-left: 1%;" class="btn btn-danger" (click)="this.loginForm.reset()">Cancel</button>
+    
+        </form>
+    
+    </div>

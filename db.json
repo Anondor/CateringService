@@ -1,0 +1,16 @@
+{
+  "usersdata": [
+    {
+      "id": "7e4ca0ad-0c3b-465d-a2c6-a14a11ee259e",
+      "userName": "Azizul",
+      "email": "azizul@gmail.com",
+      "phone": "01912356567",
+      "password": "1234",
+      "confirmPassword": "1234"
+    }
+  ],
+  "usersTeamData": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
