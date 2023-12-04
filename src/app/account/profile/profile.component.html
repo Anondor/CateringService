@@ -1,25 +1,18 @@
+<app-side-navbar></app-side-navbar>
 <h1>Hi, {{userName}}</h1>
-
-<div *ngIf="isLogin">
-    
-    <button  type="submit"><a  (click)="addTeam()">Add Team</a></button>
-</div>
 
 <hr>
 <div style="float: left; width: 50%;">
+    <ul>
+        <li>Email: {{email}}</li>
+        <li>phone: {{phone}}</li>
+    </ul>
     
-<ul>
-    <li>Team Name: {{teamName}}</li>
-    <li>Designation: {{designation}} </li>
-</ul>
 </div>
 <div style="float: right; width: 50%;">
-    
-<ul>
-    <li>Email: {{email}}</li>
-    <li>phone: {{phone}}</li>
-</ul>
+    <ul>
+        
+    </ul>
 </div>
-
 <br>
 <br>

@@ -1,16 +1,76 @@
 {
-  "usersdata": [
+  "usersData": [
     {
-      "id": "7e4ca0ad-0c3b-465d-a2c6-a14a11ee259e",
+      "id": "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
       "userName": "Azizul",
       "email": "azizul@gmail.com",
       "phone": "01912356567",
       "password": "1234",
-      "confirmPassword": "1234"
+      "confirmPassword": "1234",
+      "teamId": "b122235a-e5f4-4964-869b-42584ad1788f",
+      "designation": "Associate"
+    },
+    {
+      "id": "2e361675-649a-4088-87eb-8d9d4287ebd1",
+      "userName": "User",
+      "email": "user@gmail.com",
+      "phone": "015748452",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "teamId": "b79495f9-af46-4a3e-8b2d-b60d3af90937",
+      "designation": "Intern"
     }
   ],
-  "usersTeamData": [],
-  "profile": {
-    "name": "typicode"
-  }
+  "teamData": [
+    {
+      "id": "b122235a-e5f4-4964-869b-42584ad1788f",
+      "teamName": "Phantom"
+    },
+    {
+      "id": "b79495f9-af46-4a3e-8b2d-b60d3af90937",
+      "teamName": "IBFD"
+    },
+    {
+      "id": "0888d842-d3ee-4b9a-8a9e-e67e1000a894",
+      "teamName": "Artisan"
+    },
+    {
+      "id": "249ee308-3a0c-45d5-8208-3fe47f3daab1",
+      "teamName": "Design"
+    }
+  ],
+  "programs": [
+    {
+      "id": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "programName": "Lunch"
+    },
+    {
+      "id": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
+      "programName": "BreakFast"
+    },
+    {
+      "id": "a1b31ce3-1fdd-4411-8b25-07b45e2731e7",
+      "programName": "Dinner"
+    },
+    {
+      "id": "bae30f3f-110b-46bb-b055-9f62fa984884",
+      "programName": "Special"
+    }
+  ],
+  "meals": [
+    {
+      "id": "cde53bef-cd3d-47f2-a79b-333ee9ac9e9c",
+      "mealName": "fish",
+      "defaultMealRate": "80",
+      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
+      "isPublish": "Yes"
+    },
+    {
+      "id": "66f31393-824c-4a58-80a8-f673a90e5b32",
+      "mealName": "beef",
+      "defaultMealRate": "90",
+      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "isPublish": "Yes"
+    }
+  ]
 }

@@ -1,0 +1,54 @@
+<app-side-navbar></app-side-navbar>
+<div class="container" style="width: 80%; margin: auto;"> 
+    <form  [formGroup]="userTeamForm" >
+    <h1 style="text-align: center;">Update User</h1>  <br>
+       <div class="input-group mb-3">
+            <label  class="col-sm-2 col-form-label">User Name</label>
+           <div style="width: 80%;"> 
+              <input type="text" class="form-control"   formControlName="userName"/>
+            </div>
+        </div> 
+
+        <div class="input-group mb-3">
+            <label  class="col-sm-2 col-form-label">Email</label>
+            <div style="width: 80%;"> 
+              <input type="email" class="form-control" formControlName="email"/>
+            </div> 
+        </div>
+        <div class="input-group mb-3">
+              <label  class="col-sm-2 col-form-label">Phone</label>
+              <div style="width: 80%;"> 
+               <input type="text" class="form-control" formControlName="phone"/>
+              </div>
+        </div> 
+  
+       
+          <div class="input-group mb-3">
+            <label  class="col-sm-2 col-form-label">Team Name</label>
+            <div style="width: 80%;"> 
+               <select  class="form-control" formControlName="teamId">
+                <option>-- select Team Name --</option>
+                <option *ngFor="let item of teamData;  "[value]="item.id"> {{item.teamName}}</option>
+              </select>            
+              </div>
+         </div> 
+
+          <div class="input-group mb-3">
+               <label  class="col-sm-2 col-form-label">Designation</label>
+               <div style="width: 80%;"> 
+                <input type="text" class="form-control" formControlName="designation"/>
+              </div>
+         </div> 
+            <button type="submit" style="margin-left: 40%;" class=" btn btn-primary" (click)="updateData(this.userTeamForm.value)" >Update</button>
+
+            <button type="submit" style="margin-left: 1%;" class="btn btn-danger" >Cancel</button>
+
+
+</form>
+
+
+
+
+</div>
+
+

@@ -1,0 +1,46 @@
+<app-side-navbar></app-side-navbar>
+<button class="btn btn-primary" (click)="addNewProgram()">Add New Program</button>
+<div class="container" style="width: 80%; margin: auto;"> 
+    <form  [formGroup]="mealDataForm" >
+    <h1 style="text-align: center;">Add New Meal</h1>  <br>
+
+    <div class="input-group mb-3">
+        <label  class="col-sm-2 col-form-label">Tittle</label>
+        <div style="width: 80%;"> 
+           <select  class="form-control" formControlName="mealName">
+            <option>-- select Meal Name --</option>
+            <option *ngFor="let item of setMenu;  "[value]="item.menuName"> {{item.menuName}}</option>
+          </select>            
+          </div>
+     </div> 
+
+    <div class="input-group mb-3">
+        <label  class="col-sm-2 col-form-label">Program Name</label>
+        <div style="width: 80%;"> 
+            <select  class="form-control" formControlName="programId">
+             <option >-- select Team Name --</option>
+             <option *ngFor="let item of programData;  "[value]="item.id"> {{item.programName}}</option>
+           </select>            
+           </div>
+     </div> 
+
+     <div class="input-group mb-3">
+        
+        <label  class="col-sm-2 col-form-label">Default Meal Rate</label>
+         <input type="text" class="form-control"  formControlName="defaultMealRate"/>
+     </div> 
+    
+         <div >
+            <label style="margin-right: 10%;"  >Is Publish?</label>
+
+   <input type="radio" value="Yes" formControlName="isPublish">Yes
+            <input type="radio" value="No" formControlName="isPublish" >No
+            </div>
+         
+        <button type="submit" style="margin-left: 40%;" class="btn btn-primary"(click)="addMealData(this.mealDataForm.value)" [disabled]="this.mealDataForm.invalid">submit</button>
+        <button type="submit" style="margin-left: 1%;" class="btn btn-danger" (click)="this.mealDataForm.reset()">Cancel</button> 
+
+
+        
+</form>
+</div>

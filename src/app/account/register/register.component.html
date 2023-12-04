@@ -1,33 +1,44 @@
 <div class="container" style="width: 80%; margin: auto;"> 
           <form  [formGroup]="signupForm" >
           <h1 style="text-align: center;">Signup Here</h1>  <br>
-          <div class="input-group mb-3">
-            <label  class="col-sm-2 col-form-label">User Name</label>
-  
-              <input type="text" class="form-control"  formControlName="userName"/>
+             <div class="input-group mb-3">
+                  <label  class="col-sm-2 col-form-label">User Name</label>
+                 <div style="width: 80%;"> 
+                    <input type="text" class="form-control"  formControlName="userName"/>
+                    <small *ngIf="signupForm.get('userName').invalid && signupForm.get('userName').touched">*User name is a required field.</small>
+                  </div>
               </div> 
-          <div class="input-group mb-3">
-            <label  class="col-sm-2 col-form-label">Email</label>
 
-              <input type="email" class="form-control" formControlName="email"/>
-              </div> 
               <div class="input-group mb-3">
-                <label  class="col-sm-2 col-form-label">Phone</label>
-    
-                  <input type="text" class="form-control" formControlName="phone"/>
+                  <label  class="col-sm-2 col-form-label">Email</label>
+                  <div style="width: 80%;"> 
+                    <input type="email" class="form-control" formControlName="email"/>
+                    <small *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">*Valid email account is a required .</small>
                   </div> 
+              </div>
+
+              <div class="input-group mb-3">
+                    <label  class="col-sm-2 col-form-label">Phone</label>
+                    <div style="width: 80%;"> 
+                     <input type="text" class="form-control" formControlName="phone"/>
+                     <small *ngIf="signupForm.get('phone').invalid && signupForm.get('phone').touched">*Phone name is a required field.</small>
+                    </div>
+              </div> 
           <div class="input-group mb-3">
             <label  class="col-sm-2 col-form-label">Password</label>
-
+            <div style="width: 80%;"> 
               <input type="password" class="form-control" formControlName="password"/>
+              </div>
               </div>
 
               <div class="input-group mb-3" >
                 <label  class="col-sm-2 col-form-label">Confirm Password</label>
-
+                <div style="width: 80%;"> 
                   <input type="password" class="form-control" formControlName="confirmPassword"/>
+                  <small *ngIf="signupForm.get('confirmPassword').touched && signupForm.get('confirmPassword').invalid&& signupForm.get('password')!=signupForm.get('confirmPassword')" >*Password  don't match.</small>
                 </div>
-                  <button type="submit" style="margin-left: 40%;"(click)="signupdata(this.signupForm.value)" class="btn btn-primary" [disabled]="this.signupForm.invalid">submit</button>
+                </div>
+                  <button type="submit" style="margin-left: 40%;"(click)="signupdata(this.signupForm.value)" class="btn btn-primary" [disabled]="this.signupForm.invalid">SignUp</button>
 
                   <button type="submit" style="margin-left: 1%;" class="btn btn-danger" (click)="this.signupForm.reset()">Cancel</button>
       </form>

@@ -5,5 +5,8 @@ export interface datamodel{
     password:string;
     confirmPassword:string;
     phone:string;
+    teamId:string;
+    teamName:string;
+    designation:string
 
 }

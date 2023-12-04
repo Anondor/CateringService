@@ -10,7 +10,6 @@ import { ApiService } from 'src/app/api.service';
 export class ProfileComponent  {
 
   constructor(private router:Router,private apiService:ApiService) {}
-
   get isLogin(){
     return this.apiService.isLogin;
   }
@@ -24,18 +23,23 @@ export class ProfileComponent  {
   {
     return this.apiService.phone;
   }
+  /*
   get teamName()
   {
+    console.log(this.apiService.teamName);
     return this.apiService.teamName;
   }
   get designation()
   {
+    console.log(this.apiService.designation);
     return this.apiService.designation;
   }
-  get teamLead()
+  get teamLeadName()
   {
-    return this.apiService.teamLead;
+    console.log(this.apiService.teamLeadName);
+    return this.apiService.teamLeadName;
   }
+  */
   ResetLogin()
   {
     this.apiService.isLogin=false;
@@ -45,5 +49,4 @@ export class ProfileComponent  {
   {
       this.router.navigate(['teamDetails'])
   }
-
 }

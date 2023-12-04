@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, RequiredValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -11,46 +13,36 @@ import { ApiService } from 'src/app/api.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm:FormGroup|any;
+  loginForm:FormGroup;
   
-  constructor( private http:HttpClient, private router:Router, private apiService:ApiService) {}
+  constructor( private http:HttpClient, private router:Router, private apiService:ApiService,private toastr: ToastrService) {}
 
-  ngOnInit(): void {
-    this.loginForm=new FormGroup({
-      'email':new FormControl(),
-      'password':new FormControl()
-    })
-  }
+    ngOnInit(): void {
+      this.loginForm=new FormGroup({
+        'email':new FormControl(null,Validators.required),
+        'password':new FormControl(null,Validators.required)
+      })
+    }
 
-  logindata(loginForm:FormGroup)
-  {
-      this.http.get<any>("http://localhost:3000/usersdata").subscribe(res=>{
-        const user=res.find((a:any)=>{
-          return a.email===this.loginForm.value.email && a.password=== this.loginForm.value.password
-        });
+    logindata(loginForm:FormGroup)
+    {
+        this.http.get<any>("http://localhost:3000/usersData").subscribe(res=>{
+        
+          const user=res.find((userData:any)=>{
+            return userData.email === this.loginForm.value.email && userData.password === this.loginForm.value.password
+          });
+          if(user)
+          {
+            this.toastr.success('Hello, this is a success toast!', 'Success');
+          this.router.navigate(['admin'])
+          } else{
+            alert("email or password not match\n please try again!");
+          }
 
-        if(user)
-        {
-          alert("you are successfully login");
-          this.loginForm.reset();
-          this.apiService.isLogin=true;  
-          this.apiService.userName=user.userName;   
-          this.apiService.email=user.email;
-          this.apiService.id=user.id;
-          this.apiService.phone=user.phone;  
-          this.router.navigate(['profile'])
-        } else{
-          alert("user not Found");
-          this.router.navigate(['login'])
-        }
+        })
+    }
 
-      },err=>{
-        alert("something was wrong")
-      }
-      )
-  }
-
-    
+      
     
     
   }

@@ -1,0 +1,15 @@
+<app-side-navbar></app-side-navbar>
+<div class="container" style="width: 80%; margin: auto;"> 
+    <form  [formGroup]="teamDataForm" >
+    <h1 style="text-align: center;">Add Team  Details</h1>  <br>
+         <div class="input-group mb-3">
+           <label  class="col-sm-2 col-form-label">Team Name</label>
+            <input type="text" class="form-control"  formControlName="teamName"/>
+        </div> 
+        
+            <button type="submit" style="margin-left: 40%;"(click)="updateTeam(this.teamDataForm.value)" class="btn btn-primary">Update</button>
+
+            <button type="submit" style="margin-left: 1%;" class="btn btn-danger" (click)="this.teamDataForm.reset()">Cancel</button> 
+        
+</form>
+</div>

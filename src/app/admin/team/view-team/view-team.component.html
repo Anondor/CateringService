@@ -1,0 +1,23 @@
+<app-side-navbar></app-side-navbar>
+<div style="width: 60%;"> </div>
+
+<table class="table" style="width: 40%; margin: auto;">
+    <thead style="margin: center;">
+      <tr>
+     
+        <th scope="col">Team Name</th>
+        <th scope="col" >Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tbody>
+            <tr *ngFor="let item of teamData; ">
+      
+              <td>{{item.teamName}}</td>
+                <td><button class="btn btn-warning" routerLink="/updateTeam/{{item.id}}">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="deleteRow(item)">Delete</button></td>
+                
+              </tr>  
+          </tbody> 
+
+  </table>
