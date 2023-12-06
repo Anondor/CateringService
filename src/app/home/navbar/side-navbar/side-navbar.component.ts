@@ -23,5 +23,9 @@ export class SideNavbarComponent {
   {
     this.router.navigate(['setMeal']);
   }
+  orderManagement()
+  {
+    this.router.navigate(['order-management']);
+  }
 
 }

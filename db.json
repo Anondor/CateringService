@@ -12,13 +12,23 @@
     },
     {
       "id": "2e361675-649a-4088-87eb-8d9d4287ebd1",
-      "userName": "User",
-      "email": "user@gmail.com",
+      "userName": "Sakib",
+      "email": "sakib@gmail.com",
       "phone": "015748452",
       "password": "1234",
       "confirmPassword": "1234",
       "teamId": "b79495f9-af46-4a3e-8b2d-b60d3af90937",
       "designation": "Intern"
+    },
+    {
+      "id": "a898dd42-a7a1-4532-b726-fd3cb88051a2",
+      "userName": "Rakibul",
+      "email": "rakibul@gmail.com",
+      "phone": "01945457451",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "teamId": "0888d842-d3ee-4b9a-8a9e-e67e1000a894",
+      "designation": "Software Engineer"
     }
   ],
   "teamData": [
@@ -60,17 +70,60 @@
   "meals": [
     {
       "id": "cde53bef-cd3d-47f2-a79b-333ee9ac9e9c",
-      "mealName": "fish",
+      "mealName": "Fish",
       "defaultMealRate": "80",
       "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
       "isPublish": "Yes"
     },
     {
       "id": "66f31393-824c-4a58-80a8-f673a90e5b32",
-      "mealName": "beef",
+      "mealName": "Beef",
       "defaultMealRate": "90",
       "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
       "isPublish": "Yes"
+    },
+    {
+      "id": "aa45fe6c-6981-46c4-a083-7b4391b777d1",
+      "mealName": "Chicken",
+      "defaultMealRate": "75",
+      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "isPublish": "Yes"
+    },
+    {
+      "id": "467e7d1c-5647-4a5f-a58b-ebfefe7cb431",
+      "mealName": "Fish",
+      "defaultMealRate": "75",
+      "programId": "a1b31ce3-1fdd-4411-8b25-07b45e2731e7",
+      "isPublish": "Yes"
+    }
+  ],
+  "ordersList": [
+    {
+      "id": "79071eb9-e355-4f47-9323-1fa70f8fd29e",
+      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "itemId": "66f31393-824c-4a58-80a8-f673a90e5b32",
+      "userId": [
+        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
+        "2e361675-649a-4088-87eb-8d9d4287ebd1"
+      ]
+    },
+    {
+      "id": "90577956-0467-423e-bb21-c2e644e18f5a",
+      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
+      "itemId": "aa45fe6c-6981-46c4-a083-7b4391b777d1",
+      "userId": [
+        "a898dd42-a7a1-4532-b726-fd3cb88051a2"
+      ]
+    },
+    {
+      "id": "a7419e50-289d-45d2-9bd9-0848396dc089",
+      "programId": "a1b31ce3-1fdd-4411-8b25-07b45e2731e7",
+      "itemId": "467e7d1c-5647-4a5f-a58b-ebfefe7cb431",
+      "userId": [
+        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
+        "2e361675-649a-4088-87eb-8d9d4287ebd1",
+        "a898dd42-a7a1-4532-b726-fd3cb88051a2"
+      ]
     }
   ]
 }

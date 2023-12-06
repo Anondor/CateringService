@@ -15,9 +15,9 @@ mealDataForm:FormGroup
 programData:any;
 
   setMenu=[
-      {id: '1', menuName: 'chicken', defaultPrice:1002.00},
-      {id: '2', menuName: 'beef',defaultPrice:1002.00},
-      {id: '3', menuName: 'fish',defaultPrice:1002.00},
+      {id: '1', menuName: 'Chicken', defaultPrice:1002.00},
+      {id: '2', menuName: 'Beef',defaultPrice:1002.00},
+      {id: '3', menuName: 'Fish',defaultPrice:1002.00},
     ];
 
  
@@ -52,7 +52,7 @@ programData:any;
     data.id= uuidv4();
     this.apiService.addMeal(data).subscribe((res=>{
       this.mealDataForm.reset();
-      this.router.navigate(['setMeal']);
+      this.router.navigate(['admin']);
 
      }))
   }

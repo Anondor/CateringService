@@ -29,7 +29,6 @@ export class SetProgramComponent implements OnInit{
     this.apiService.addPrograms(data).subscribe((res=>{
       this.programDataForm.reset();
       this.router.navigate(['setMeal']);
-
      }))
   }
 

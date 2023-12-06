@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { datamodel } from './interfaces/model';
-import { IuserTeam } from './interfaces/userTeams';
 import { teamDatamodel } from './interfaces/teamModel';
+import { MenuModel } from './interfaces/menu';
+import { OrderListModel } from './interfaces/orderList';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ApiService {
   apiTeamUrl="http://localhost:3000/teamData";
   apiProgramUrl="http://localhost:3000/programs";
   apiMealUrl="http://localhost:3000/meals";
+  apiordersUrl="http://localhost:3000/ordersList";
   public isLogin:boolean;
   public userName:string;
   public email:string;
@@ -32,6 +34,10 @@ export class ApiService {
   {
     return this.http.post<datamodel>(`${this.apiTeamUrl}`,data);
   }
+  addOrderDetails (data:OrderListModel)
+  {
+    return this.http.post<OrderListModel>(`${this.apiordersUrl}`,data);
+  }
   // get user
 
   getUserData()
@@ -39,10 +45,22 @@ export class ApiService {
     const userData= this.http.get<datamodel[]>(`${this.apiUrl}`);
     return userData;
   }
+  userOrderList()
+  {
+    const userOrder= this.http.get<OrderListModel[]>(`${this.apiordersUrl}`);
+    return userOrder;
+  }
   getTeamData()
   {
     const teamdata=this.http.get<teamDatamodel[]>(`${this.apiTeamUrl}`);
     return teamdata;
+
+  }
+
+  getMenu()
+  {
+    const menuData=this.http.get<MenuModel[]>(`${this.apiMealUrl}`);
+    return menuData;
 
   }
   getProgramData()
@@ -74,7 +92,6 @@ export class ApiService {
 
   updateemployee(id:string,data:datamodel)
   {
-
     const updateUser=this.http.put<datamodel>(`${this.apiUrl}/${id}`,data);
         return updateUser;
   }
