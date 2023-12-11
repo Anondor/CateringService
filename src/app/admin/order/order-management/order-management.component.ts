@@ -27,11 +27,11 @@ export class OrderManagementComponent implements OnInit {
   programData: ProgramModel[];
   userData: datamodel[];
 
-  userOrderList: OrderListModel[];
+
 
  
-  orderConfirmList: OrderManageModel[] = [];
-  tableId: number = 1;
+
+
 
 
 
@@ -52,7 +52,7 @@ export class OrderManagementComponent implements OnInit {
     });
 
 
-    this.getuserOrderList();
+  
 
   }
   /////////////////////////Start/////////////////////////////////
@@ -76,6 +76,7 @@ export class OrderManagementComponent implements OnInit {
     this.orderDataForm.value.programId = this.programId;
     this.orderDataForm.value.itemId = itemId;
   }
+  
   onChangeOption(option: any, event: any) {
     if (option.id != null) {
       if (event.target.checked) {
@@ -91,70 +92,18 @@ export class OrderManagementComponent implements OnInit {
   onSubmit() {
     this.apiService.addOrderDetails(this.orderDataForm.value).subscribe((res => {
       this.orderDataForm.reset();
-      this.router.navigate(['profile']);
+      this.router.navigate(['view-order-list']);
+      // this.changeRouteToOrderView();
     }))
   }
 
-
-  /////////////////////////////////////End////////////////////////////////
-
-  getuserOrderList() {
-
-    this.apiService.userOrderList().subscribe(res => {
-      this.userOrderList = res;
-
-      for (let item of this.userOrderList) {
-       
-        let mealName = "";
-        let programName = "";
-        //debugger
-
-        for (let menu of this.setMenu) {
-          if (item.itemId === menu.id) {
-
-            mealName = menu.mealName;
-            break
-
-
-          }
-        }
-
-
-        for (let program of this.programData) {
-          if (item.programId === program.id) {
-            programName = program.programName;
-            break
-          }
-        }
-
-        for (let i = 0; i < item.userId.length; i++) {
-          let orderConfirm: OrderManageModel = { email: "", id: "", mealName: "", programName: "", userId: "", userName: "" };
-          for (let user of this.userData) {
-            //debugger
-            if (user.id == item.userId[i]) {
-              orderConfirm.id=uuidv4();
-              orderConfirm.userName = user.userName;
-              orderConfirm.userId = user.id;
-              orderConfirm.email = user.email;
-              orderConfirm.mealName = mealName;
-              orderConfirm.programName = programName;
-              this.orderConfirmList.push(orderConfirm);
-
-              break
-            }
-          }
-        }
-
-
-      }
-
-      console.log(this.orderConfirmList)
-
-    })
-
-
-
+  changeRouteToOrderView()
+  {
+    this.router.navigate(['view-order-list']);
   }
+
+
+
 
 
 

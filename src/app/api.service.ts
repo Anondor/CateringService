@@ -4,6 +4,7 @@ import { datamodel } from './interfaces/model';
 import { teamDatamodel } from './interfaces/teamModel';
 import { MenuModel } from './interfaces/menu';
 import { OrderListModel } from './interfaces/orderList';
+import { OrderManageModel } from './interfaces/OrderManage';
 
 @Injectable({
   providedIn: 'root'
@@ -78,6 +79,7 @@ export class ApiService {
   {
     return this.http.delete(`${this.apiUrl}/${id}`,data);
   }
+
 
   deleteTeamData(id:String,data:any)
   {

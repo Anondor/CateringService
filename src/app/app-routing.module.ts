@@ -15,6 +15,8 @@ import { UpdateTeamComponent } from './admin/team/update-team/update-team.compon
 import { SetProgramComponent } from './admin/program/set-program/set-program.component';
 import { SetMealComponent } from './admin/program/set-meal/set-meal.component';
 import { OrderManagementComponent } from './admin/order/order-management/order-management.component';
+import { ViewOrderComponent } from './admin/order/view-order/view-order.component';
+import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path:'setProgram',component:SetProgramComponent},
   {path:'setMeal',component:SetMealComponent},
   {path:'order-management',component:OrderManagementComponent},
+  {path:'view-order-list',component:ViewOrderComponent},
+  {path:'view-calendar',component:CalendarViewComponent},
 ];
 
 @NgModule({

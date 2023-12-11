@@ -18,14 +18,14 @@ import { SideNavbarComponent } from './home/navbar/side-navbar/side-navbar.compo
 import { ToastrModule } from 'ngx-toastr';
 import { UpdateUserTeamComponent } from './admin/team/update-user-team/update-user-team.component';
 import { TeamRegistrationComponent } from './admin/team/team-registration/team-registration.component';
-
-import { MatSelectModule } from '@angular/material/select';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ViewTeamComponent } from './admin/team/view-team/view-team.component';
 import { UpdateTeamComponent } from './admin/team/update-team/update-team.component';
 import { SetProgramComponent } from './admin/program/set-program/set-program.component';
 import { SetMealComponent } from './admin/program/set-meal/set-meal.component';
 import { OrderManagementComponent } from './admin/order/order-management/order-management.component';
+import { ViewOrderComponent } from './admin/order/view-order/view-order.component';
+import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -40,8 +40,16 @@ import { OrderManagementComponent } from './admin/order/order-management/order-m
     RegisterComponent, 
     LoginComponent, 
     ProfileComponent, 
-    
-    SideNavbarComponent, UpdateUserTeamComponent, TeamRegistrationComponent, ViewTeamComponent, UpdateTeamComponent, SetProgramComponent, SetMealComponent, OrderManagementComponent 
+    SideNavbarComponent, 
+    UpdateUserTeamComponent, 
+    TeamRegistrationComponent, 
+    ViewTeamComponent,
+    UpdateTeamComponent,
+    SetProgramComponent, 
+    SetMealComponent, 
+    OrderManagementComponent, 
+    ViewOrderComponent, 
+    CalendarViewComponent 
   
   ],
   imports: [
@@ -50,10 +58,9 @@ import { OrderManagementComponent } from './admin/order/order-management/order-m
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
-    MatSelectModule ,
-    MatFormFieldModule, 
-    ToastrModule.forRoot(),
+    HttpClientModule, 
+    FullCalendarModule,
+    ToastrModule.forRoot(), 
     
   ],
   providers: [],

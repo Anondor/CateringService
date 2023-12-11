@@ -1,0 +1,27 @@
+<app-side-navbar></app-side-navbar>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Program</th>
+        <th scope="col">Item</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orderConfirmList; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{item.userName}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.programName}}</td>
+          <td>{{item.mealName}}</td>
+          <td><button class="btn btn-danger" (click)="deleteUser(i,item)">Delete</button></td>
+          
+        </tr> 
+      
+    </tbody>
+  </table>
+
+  <button type="submit" class="btn btn-primary" (click)="addNewRow()">Add More User</button>

@@ -27,5 +27,9 @@ export class SideNavbarComponent {
   {
     this.router.navigate(['order-management']);
   }
+  calenderView()
+  {
+    this.router.navigate(['view-calendar']);
+  }
 
 }
