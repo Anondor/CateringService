@@ -133,5 +133,28 @@
         "a898dd42-a7a1-4532-b726-fd3cb88051a2"
       ]
     }
+  ],
+  "calendarData": [
+    {
+      "id": "6e1c0a0b-cc6a-4c77-a18f-81215b45a33e",
+      "title": "Hi Everyone",
+      "start": "2023-12-05",
+      "end": "2023-12-06",
+      "allDay": true
+    },
+    {
+      "id": "cff49e34-90f7-4678-8a8d-ccccccaead05",
+      "title": "ki khobor",
+      "start": "2023-12-06",
+      "end": "2023-12-07",
+      "allDay": true
+    },
+    {
+      "id": "9ed7024f-1674-40cc-b376-3db017ab345b",
+      "title": "Gumabo",
+      "start": "2023-12-05T06:00:00+06:00",
+      "end": "2023-12-05T06:30:00+06:00",
+      "allDay": false
+    }
   ]
 }

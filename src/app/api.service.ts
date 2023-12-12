@@ -15,6 +15,7 @@ export class ApiService {
   apiProgramUrl="http://localhost:3000/programs";
   apiMealUrl="http://localhost:3000/meals";
   apiordersUrl="http://localhost:3000/ordersList";
+  apiCalenderUrl="http://localhost:3000/calendarData";
   public isLogin:boolean;
   public userName:string;
   public email:string;
@@ -30,6 +31,7 @@ export class ApiService {
     return this.http.post<datamodel>(`${this.apiUrl}`,data);
     
   }
+
     // Add Team info
   addTeamDetails (data:teamDatamodel)
   {
@@ -39,7 +41,19 @@ export class ApiService {
   {
     return this.http.post<OrderListModel>(`${this.apiordersUrl}`,data);
   }
+  //
+  addCalenderEvent( data:any)
+  {
+    return this.http.post<any>(`${this.apiCalenderUrl}`,data);
+    
+  }
   // get user
+
+  getCalendarData()
+  {
+    const calendarEvent=this.http.get<any>(`${this.apiCalenderUrl}`);
+    return calendarEvent;
+  }
 
   getUserData()
   {
