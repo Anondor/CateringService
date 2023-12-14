@@ -1,0 +1,77 @@
+<app-side-navbar></app-side-navbar>
+
+<form [formGroup]="dateRangeForm">  
+
+<div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+        <label>start Date</label>
+        <input type="date" class="form-control" formControlName="startDay"  arial-describedby="emailHelp" >
+		
+    </div>
+    <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+        <label>End Date</label>
+        <input type="date" class="form-control"  formControlName="endDay" arial-describedby="emailHelp" >
+		
+    </div>
+  </div>
+
+  <br>
+  <button type="submit" style="margin-left: 30%;" class="btn btn-primary" (click)="getRange(this.dateRangeForm.value)">Submit</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Program</th>
+        <th scope="col">Item</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <!-- 
+      <tr *ngFor="let item of orderConfirmList; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{item.userName}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.programName}}</td>
+          <td>{{item.mealName}}</td>
+          <td><button class="btn btn-danger" (click)="deleteUser(i,item)">Delete</button></td>
+          
+        </tr> -->
+
+        <tr>
+            <td>1</td>
+            <td>Name</td>
+            <td>email</td>
+            <td>program</td>
+            <td>item</td>
+            <td>Total Cost</td>
+        </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Name</td>
+            <td>email</td>
+            <td>program</td>
+            <td>item</td>
+            <td><ul>
+                <li>Total</li>
+                <li>Cost</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Name</td>
+            <td>email</td>
+            <td>program</td>
+            <td>item</td>
+            <td>Total Cost</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+

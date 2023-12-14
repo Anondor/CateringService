@@ -26,6 +26,7 @@ import { OrderManagementComponent } from './admin/order/order-management/order-m
 import { ViewOrderComponent } from './admin/order/view-order/view-order.component';
 import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { PaymentComponent } from './admin/payment/payment.component';
 
 
 @NgModule({
@@ -49,7 +50,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     SetMealComponent, 
     OrderManagementComponent, 
     ViewOrderComponent, 
-    CalendarViewComponent 
+    CalendarViewComponent, PaymentComponent 
   
   ],
   imports: [

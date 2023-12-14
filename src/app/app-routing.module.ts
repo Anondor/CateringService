@@ -7,7 +7,6 @@ import { VendorComponent } from './vendor/vendor.component';
 import { RegisterComponent } from './account/register/register.component';
 import { LoginComponent } from './account/login/login.component';
 import { ProfileComponent } from './account/profile/profile.component';
-//import { TeamComponent } from './account/profile/team/team.component';
 import { UpdateUserTeamComponent } from './admin/team/update-user-team/update-user-team.component';
 import { TeamRegistrationComponent } from './admin/team/team-registration/team-registration.component';
 import { ViewTeamComponent } from './admin/team/view-team/view-team.component';
@@ -17,6 +16,7 @@ import { SetMealComponent } from './admin/program/set-meal/set-meal.component';
 import { OrderManagementComponent } from './admin/order/order-management/order-management.component';
 import { ViewOrderComponent } from './admin/order/view-order/view-order.component';
 import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
+import { PaymentComponent } from './admin/payment/payment.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -35,6 +35,7 @@ const routes: Routes = [
   {path:'order-management',component:OrderManagementComponent},
   {path:'view-order-list',component:ViewOrderComponent},
   {path:'view-calendar',component:CalendarViewComponent},
+  {path:'payment',component:PaymentComponent}
 ];
 
 @NgModule({

@@ -49,6 +49,7 @@ export class OrderManagementComponent implements OnInit {
       programId: new FormControl(),
       itemId: new FormControl(),
       userId: new FormArray([]),
+      orderDate:new FormControl()
     });
 
 
@@ -72,9 +73,12 @@ export class OrderManagementComponent implements OnInit {
     })
   }
   selectedItem(itemId: string) {
+    const TODAY_STR = new Date().toISOString();
+
     this.orderDataForm.value.id = uuidv4();
     this.orderDataForm.value.programId = this.programId;
     this.orderDataForm.value.itemId = itemId;
+    this.orderDataForm.value.orderDate=TODAY_STR.slice(0,10);
   }
   
   onChangeOption(option: any, event: any) {

@@ -1,11 +1,10 @@
 import { Component, signal, ChangeDetectorRef, OnInit } from '@angular/core';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
+import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, ViewApi } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
-import { INITIAL_EVENTS, createEventId, initializeEvents } from './event-utils';
-import { CalendarModel } from 'src/app/interfaces/calendar';
+import { createEventId, initializeEvents } from './event-utils';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -13,13 +12,26 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './calendar-view.component.html',
   styleUrls: ['./calendar-view.component.css']
 })
-export class CalendarViewComponent {
+export class CalendarViewComponent  implements OnInit{
   flag: number;
-
-  calenderData: CalendarModel;
-
-
   calendarVisible = signal(true);
+  selectInfo: DateSelectArg;
+  calendarApi:ViewApi;
+
+  constructor(private changeDetector: ChangeDetectorRef, private apiService: ApiService) {
+    this.flag = 0;
+
+  }
+  ngOnInit(): void {
+
+    this.apiService.getCalendarData().subscribe(res => {
+      for (let x of res) {  this.calendarApi?.calendar?.view?.calendar?.addEvent(x)}
+      this.flag = 1;
+    })
+       
+  }
+
+
   calendarOptions = signal<CalendarOptions>({
     plugins: [
       interactionPlugin,
@@ -45,15 +57,11 @@ export class CalendarViewComponent {
 
   });
   currentEvents = signal<EventApi[]>([]);
-  constructor(private changeDetector: ChangeDetectorRef, private apiService: ApiService) {
-    this.flag = 0;
-
-
-  }
 
   handleDateSelect(selectInfo: DateSelectArg) {
+
     const title = prompt('Please enter a new title for your event');
-    const calendarApi = selectInfo.view.calendar;
+const calendarApi=selectInfo.view.calendar;
     calendarApi.unselect();
     if (title) {
 
@@ -67,19 +75,15 @@ export class CalendarViewComponent {
       };
       
          calendarApi.addEvent(eventToAdd)
-         console.log(eventToAdd);
-       debugger;
 
        if (this.flag === 0) {
+
         this.apiService.getCalendarData().subscribe(res => {
-          for (let x of res) {  calendarApi.addEvent(x); debugger; }
+          for (let x of res) {  calendarApi.addEvent(x); }
           this.flag = 1;
+
         })
-        console.group(calendarApi);
-        debugger
-
       }
-
       this.apiService.addCalenderEvent(eventToAdd).subscribe((res => {
 
       }))
@@ -99,6 +103,4 @@ export class CalendarViewComponent {
 
     this.changeDetector.detectChanges();
   }
-
-
 }

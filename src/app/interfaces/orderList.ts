@@ -3,5 +3,6 @@ export interface OrderListModel{
     programId:string;
     itemId:string;
     userId:string;
+    orderDate:string;
 
 }

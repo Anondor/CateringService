@@ -31,5 +31,9 @@ export class SideNavbarComponent {
   {
     this.router.navigate(['view-calendar']);
   }
+  paymentView()
+  {
+    this.router.navigate(['payment']);
+  }
 
 }

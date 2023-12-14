@@ -26,7 +26,6 @@ export class ViewOrderComponent implements OnInit {
     this.getMenuData();
     this.getProgram();
     this.getUser();
-
   }
 
   ngOnInit(): void {
@@ -34,7 +33,6 @@ export class ViewOrderComponent implements OnInit {
     this.getuserOrderList();
 
   }
-  /////////////////////////Start/////////////////////////////////
   getProgram() {
     this.apiService.getProgramData().subscribe(res => {
       this.programData = res;
@@ -95,8 +93,6 @@ export class ViewOrderComponent implements OnInit {
             }
           }
         }
-
-
       }
     })
   }
