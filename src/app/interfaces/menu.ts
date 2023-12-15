@@ -5,3 +5,10 @@ export interface MenuModel{
     programId:string;
     isPublish:string;
 }
+
+export interface MealModel{
+    id:string;
+    mealName:string;
+    mealRate:number;
+    count:number;
+}

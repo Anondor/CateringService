@@ -9,12 +9,16 @@ export interface PaymentCalculationModel{
     id:string,
     userName:string,
     email:string,
-    meal:MealCalculationModel[]
+    meal:MealCalculationModel[],
+    totalCost:number,
+    totalMeal:number,
+    teamName:string
 
 }
 export interface MealCalculationModel
 {
     id:string,
     type:string,
-    cost:number
+    cost:number,
+    count:number
 }
