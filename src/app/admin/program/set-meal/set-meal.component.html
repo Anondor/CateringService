@@ -1,5 +1,6 @@
 <app-side-navbar></app-side-navbar>
 <button class="btn btn-primary" (click)="addNewProgram()">Add New Program</button>
+<button class="btn btn-primary" (click)="addNewItem()" style="margin-left: 1%;">Add New Program</button>
 <div class="container" style="width: 80%; margin: auto;"> 
     <form  [formGroup]="mealDataForm" >
     <h1 style="text-align: center;">Add New Meal</h1>  <br>
@@ -22,12 +23,6 @@
              <option *ngFor="let item of programData;  "[value]="item.id"> {{item.programName}}</option>
            </select>            
            </div>
-     </div> 
-
-     <div class="input-group mb-3">
-        
-        <label  class="col-sm-2 col-form-label">Default Meal Rate</label>
-         <input type="text" class="form-control"  formControlName="defaultMealRate"/>
      </div> 
     
          <div >

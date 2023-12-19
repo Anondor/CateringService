@@ -4,7 +4,7 @@ import { datamodel } from './interfaces/model';
 import { teamDatamodel } from './interfaces/teamModel';
 import { MenuModel } from './interfaces/menu';
 import { OrderListModel } from './interfaces/orderList';
-import { OrderManageModel } from './interfaces/OrderManage';
+import { PaidBalanceModel } from './interfaces/dateRangeModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,8 @@ export class ApiService {
   apiMealUrl="http://localhost:3000/meals";
   apiordersUrl="http://localhost:3000/ordersList";
   apiCalenderUrl="http://localhost:3000/calendarData";
+  apiPaidUrl="http://localhost:3000/paidDetails";
+  apiNewItemUrl="http://localhost:3000/setItems";
   public isLogin:boolean;
   public userName:string;
   public email:string;
@@ -126,6 +128,24 @@ export class ApiService {
   addMeal(data:any)
   {
     return this.http.post<any>(`${this.apiMealUrl}`,data);
+  }
+
+  addPaidAmountDetails(data:PaidBalanceModel)
+  {
+    return this.http.post<PaidBalanceModel>(`${this.apiPaidUrl}`,data);
+  }
+  getPaidDetails()
+  {
+    return this.http.get<PaidBalanceModel[]>(`${this.apiPaidUrl}`);
+  }
+  getSetMenu()
+  {
+    return this.http.get<any>(`${this.apiNewItemUrl}`);
+  }
+
+  addNewItem(data:any)
+  {
+    return this.http.post<any>(`${this.apiNewItemUrl}`,data);
   }
 
 }

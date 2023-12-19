@@ -29,6 +29,16 @@
       "confirmPassword": "1234",
       "teamId": "0888d842-d3ee-4b9a-8a9e-e67e1000a894",
       "designation": "Software Engineer"
+    },
+    {
+      "id": "633b04ba-2bff-4aa1-b0a7-c835305a3f5a",
+      "userName": "Fahim",
+      "email": "fahim@gmail.com",
+      "phone": "01912356525",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "teamId": "0888d842-d3ee-4b9a-8a9e-e67e1000a894",
+      "designation": "Associate"
     }
   ],
   "teamData": [
@@ -69,168 +79,93 @@
   ],
   "meals": [
     {
-      "id": "cde53bef-cd3d-47f2-a79b-333ee9ac9e9c",
-      "mealName": "Fish",
-      "defaultMealRate": "80",
-      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
-      "isPublish": "Yes"
-    },
-    {
-      "id": "66f31393-824c-4a58-80a8-f673a90e5b32",
-      "mealName": "Beef",
-      "defaultMealRate": "90",
-      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
-      "isPublish": "Yes"
-    },
-    {
-      "id": "aa45fe6c-6981-46c4-a083-7b4391b777d1",
+      "id": "5890fae3-9b90-4d86-98d6-55eec1c67e3f",
       "mealName": "Chicken",
-      "defaultMealRate": "75",
+      "defaultMealRate": 102,
       "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "isPublish": "Yes"
+    },
+    {
+      "id": "32478453-9345-493e-9fdf-4dd39ffb47f4",
+      "mealName": "Beef",
+      "defaultMealRate": 120,
+      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "isPublish": "Yes"
+    },
+    {
+      "id": "6f70c6d7-bef5-4d3d-ae99-c08d7033b82e",
+      "mealName": "Fish",
+      "defaultMealRate": 90,
+      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
       "isPublish": "Yes"
     }
   ],
   "ordersList": [
     {
-      "id": "120c42f8-3786-40e0-b7db-e2e065d06cf2",
+      "id": "383f2d5b-7146-4989-81b0-9177de8289eb",
       "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
-      "itemId": "66f31393-824c-4a58-80a8-f673a90e5b32",
-      "userId": [
-        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
-        "2e361675-649a-4088-87eb-8d9d4287ebd1",
-        "a898dd42-a7a1-4532-b726-fd3cb88051a2"
-      ],
-      "orderDate": "2023-12-15"
-    },
-    {
-      "id": "6dd94ea5-de31-4867-b0f8-6cd29efb1f86",
-      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
-      "itemId": "aa45fe6c-6981-46c4-a083-7b4391b777d1",
-      "userId": [
-        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
-        "2e361675-649a-4088-87eb-8d9d4287ebd1",
-        "a898dd42-a7a1-4532-b726-fd3cb88051a2"
-      ],
-      "orderDate": "2023-12-15"
-    },
-    {
-      "id": "06ee8010-3013-4785-ab6d-95b5917ec2f5",
-      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
-      "itemId": "aa45fe6c-6981-46c4-a083-7b4391b777d1",
+      "itemId": "5890fae3-9b90-4d86-98d6-55eec1c67e3f",
       "userId": [
         "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
         "2e361675-649a-4088-87eb-8d9d4287ebd1"
       ],
-      "orderDate": "2023-12-15"
+      "orderDate": "2023-12-18"
     },
     {
-      "id": "957cb858-0ce9-4b61-be23-2e747ff8c74d",
-      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
-      "itemId": "cde53bef-cd3d-47f2-a79b-333ee9ac9e9c",
+      "id": "2dde2b9b-b5c4-4f1a-a0f6-246d16162a82",
+      "programId": "a1415fac-193a-4293-bb5f-a23dab26cfa5",
+      "itemId": "32478453-9345-493e-9fdf-4dd39ffb47f4",
       "userId": [
-        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18"
+        "633b04ba-2bff-4aa1-b0a7-c835305a3f5a"
       ],
-      "orderDate": "2023-12-15"
+      "orderDate": "2023-12-18"
+    },
+    {
+      "id": "c75de36d-b32f-4cd9-b3c9-5a15d04a72f0",
+      "programId": "17d3359b-aca6-45ce-8a0b-e5a17b0ef6b6",
+      "itemId": "6f70c6d7-bef5-4d3d-ae99-c08d7033b82e",
+      "userId": [
+        "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
+        "2e361675-649a-4088-87eb-8d9d4287ebd1"
+      ],
+      "orderDate": "2023-12-17"
     }
   ],
-  "calendarData": [
+  "calendarData": [],
+  "paidDetails": [
     {
-      "id": "6e1c0a0b-cc6a-4c77-a18f-81215b45a33e",
-      "title": "Chiken",
-      "start": "2023-12-05",
-      "end": "2023-12-06",
-      "allDay": true
+      "paidAmount": "50",
+      "id": "178a3fd1-4df6-45ee-afaf-b08ae0016612",
+      "userId": "72b4abe2-a276-41f0-8bf5-a62b5ce80d18",
+      "paidDate": "2023-12-18"
     },
     {
-      "id": "cff49e34-90f7-4678-8a8d-ccccccaead05",
-      "title": "Kacchi",
-      "start": "2023-12-06",
-      "end": "2023-12-07",
-      "allDay": true
+      "paidAmount": "20",
+      "id": "28b6677d-47e5-4de5-b2bd-c3cd332d3b21",
+      "userId": "2e361675-649a-4088-87eb-8d9d4287ebd1",
+      "paidDate": "2023-12-18"
+    }
+  ],
+  "setItems": [
+    {
+      "id": "6426f68e-2a03-4073-9069-65d532e08822",
+      "menuName": "Beef",
+      "defaultPrice": "100.00"
     },
     {
-      "id": "9ed7024f-1674-40cc-b376-3db017ab345b",
-      "title": "Fish",
-      "start": "2023-12-05T06:00:00+06:00",
-      "end": "2023-12-05T06:30:00+06:00",
-      "allDay": false
+      "id": "79e4a666-fd50-47f3-a082-a1cd5995351c",
+      "menuName": "Chicken",
+      "defaultPrice": "80.00"
     },
     {
-      "id": "5b20ab81-3508-4756-986d-c68209e64b5d",
-      "title": "Beef",
-      "start": "2023-12-04",
-      "end": "2023-12-05",
-      "allDay": true
+      "id": "3d3958b6-6e58-48cc-9722-31b8e1a4c80a",
+      "menuName": "Fish",
+      "defaultPrice": "70"
     },
     {
-      "id": "c792c72e-73db-4aea-a673-9f8f52033ab3",
-      "title": "azizul",
-      "start": "2023-12-14T04:00:00+06:00",
-      "end": "2023-12-14T04:30:00+06:00",
-      "allDay": false
-    },
-    {
-      "id": "7a1a5e4f-6062-4f39-a234-e4d9e49730ed",
-      "title": "rest",
-      "start": "2023-12-14T06:00:00+06:00",
-      "end": "2023-12-14T06:30:00+06:00",
-      "allDay": false
-    },
-    {
-      "id": "0730f314-1cfd-4265-81bf-9628d0ca1d17",
-      "title": "client meeting",
-      "start": "2023-12-15T08:30:00+06:00",
-      "end": "2023-12-15T09:00:00+06:00",
-      "allDay": false
-    },
-    {
-      "id": "0730f314-1cfd-4265-81bf-9628d0ca1d12",
-      "title": "Test meeting",
-      "start": "2023-12-15",
-      "end": "2023-12-15",
-      "allDay": true
-    },
-    {
-      "id": "c02ffbf7-dd96-4e02-8271-0dddaaa99744",
-      "title": "Chiken",
-      "start": "2023-12-06",
-      "end": "2023-12-07",
-      "allDay": true
-    },
-    {
-      "id": "baca1b28-689d-45a2-bb49-c7542095244d",
-      "title": "hi",
-      "start": "2023-12-06",
-      "end": "2023-12-07",
-      "allDay": true
-    },
-    {
-      "id": "903594bb-c701-423a-aed2-046ea158a563",
-      "title": "df",
-      "start": "2023-11-26",
-      "end": "2023-11-27",
-      "allDay": true
-    },
-    {
-      "id": "a62e69cb-0c3c-495e-a00b-94848169cc86",
-      "title": "kj",
-      "start": "2023-12-08",
-      "end": "2023-12-09",
-      "allDay": true
-    },
-    {
-      "id": "3d9144d1-64dc-4f31-867a-93700e88568c",
-      "title": "hj",
-      "start": "2023-12-29",
-      "end": "2023-12-30",
-      "allDay": true
-    },
-    {
-      "id": "8fce0657-c9e2-4382-ac03-eafdc08a5461",
-      "title": "yu",
-      "start": "2023-12-08",
-      "end": "2023-12-09",
-      "allDay": true
+      "id": "04cff16d-b960-4bc7-b08c-85c30c88e9b9",
+      "menuName": "Mutton",
+      "defaultPrice": "120.00"
     }
   ]
 }

@@ -36,8 +36,7 @@ export class RegisterComponent implements OnInit{
     data.id= uuidv4();
     if(data.password===data.confirmPassword)
     {
-      console.log(this.signupForm.value);
-      debugger
+     
      this.apiService.addemployee(data).subscribe((res=>{
       this.signupForm.reset();
       this.router.navigate(['login']);

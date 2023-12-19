@@ -12,7 +12,8 @@ export interface PaymentCalculationModel{
     meal:MealCalculationModel[],
     totalCost:number,
     totalMeal:number,
-    teamName:string
+    teamName:string,
+    totalPaid:number
 
 }
 export interface MealCalculationModel
@@ -21,4 +22,12 @@ export interface MealCalculationModel
     type:string,
     cost:number,
     count:number
+}
+
+export interface PaidBalanceModel
+{
+    id:string,
+    userId:string,
+    paidDate:string,
+    paidAmount:string
 }

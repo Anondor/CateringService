@@ -1,0 +1,15 @@
+<app-side-navbar></app-side-navbar>
+<div class="container" style="width: 80%; margin: auto;"> 
+    <form  [formGroup]="userPaidAmountForm" >
+    <h1 style="text-align: center;">Paid Balance</h1>  <br>
+       <div class="input-group mb-3">
+            <label  class="col-sm-2 col-form-label">Amount</label>
+           <div style="width: 80%;"> 
+              <input type="text" class="form-control"  formControlName="paidAmount"/>
+              <small *ngIf="userPaidAmountForm.get('paidAmount').invalid && userPaidAmountForm.get('paidAmount').touched">*User name is a required field.</small>
+            </div>
+        </div> 
+            <button type="submit" style="margin-left: 40%;"(click)="paidData(this.userPaidAmountForm.value)" class="btn btn-primary" [disabled]="this.userPaidAmountForm.invalid">Submit</button>
+            <button type="submit" style="margin-left: 1%;" class="btn btn-danger" (click)="this.userPaidAmountForm.reset()">Cancel</button>
+</form>
+</div>

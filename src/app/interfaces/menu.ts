@@ -12,3 +12,9 @@ export interface MealModel{
     mealRate:number;
     count:number;
 }
+export interface ItemDataModel{
+    id:string,
+    menuName:string,
+    defaultPrice:string
+
+}

@@ -27,6 +27,8 @@ import { ViewOrderComponent } from './admin/order/view-order/view-order.componen
 import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { PaymentComponent } from './admin/payment/payment.component';
+import { PaidAmountCalculationComponent } from './admin/payment/paid-amount-calculation/paid-amount-calculation.component';
+import { AddMealComponent } from './admin/program/add-meal/add-meal.component';
 
 
 @NgModule({
@@ -50,7 +52,7 @@ import { PaymentComponent } from './admin/payment/payment.component';
     SetMealComponent, 
     OrderManagementComponent, 
     ViewOrderComponent, 
-    CalendarViewComponent, PaymentComponent 
+    CalendarViewComponent, PaymentComponent, PaidAmountCalculationComponent, AddMealComponent 
   
   ],
   imports: [

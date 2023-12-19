@@ -17,6 +17,8 @@ import { OrderManagementComponent } from './admin/order/order-management/order-m
 import { ViewOrderComponent } from './admin/order/view-order/view-order.component';
 import { CalendarViewComponent } from './admin/calendar/calendar-view/calendar-view.component';
 import { PaymentComponent } from './admin/payment/payment.component';
+import { PaidAmountCalculationComponent } from './admin/payment/paid-amount-calculation/paid-amount-calculation.component';
+import { AddMealComponent } from './admin/program/add-meal/add-meal.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -35,7 +37,10 @@ const routes: Routes = [
   {path:'order-management',component:OrderManagementComponent},
   {path:'view-order-list',component:ViewOrderComponent},
   {path:'view-calendar',component:CalendarViewComponent},
-  {path:'payment',component:PaymentComponent}
+  {path:'payment',component:PaymentComponent},
+  {path:'paid-amount-calculation/:id', component:PaidAmountCalculationComponent},
+  {path:'add-new-meal',component:AddMealComponent}
+  
 ];
 
 @NgModule({

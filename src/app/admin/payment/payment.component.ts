@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { DateRangeModel, MealCalculationModel, PaymentCalculationModel } from 'src/app/interfaces/dateRangeModel';
+import { DateRangeModel, MealCalculationModel, PaidBalanceModel, PaymentCalculationModel } from 'src/app/interfaces/dateRangeModel';
 import { MealModel, MenuModel } from 'src/app/interfaces/menu';
 import { datamodel } from 'src/app/interfaces/model';
 import { OrderListModel } from 'src/app/interfaces/orderList';
@@ -22,20 +22,43 @@ export class PaymentComponent implements OnInit {
   userData: datamodel[];
   userOrderList: OrderListModel[];
   userPaymentCalculationData: PaymentCalculationModel[] = [];
+  DateRange: DateRangeModel = { startDay: "2023-01-01", endDay: new Date().toString().slice(0, 10) };
+  balanceData: PaidBalanceModel[];
+  setTotalPay = {};
+
+
 
   ngOnInit(): void {
+
     this.dateRangeForm = new FormGroup({
       startDay: new FormControl(null, Validators.required),
       endDay: new FormControl(null, Validators.required)
     });
 
+    this.paidDetailsValue(this.DateRange);
+    this.getRange(this.DateRange);
+
   }
 
   constructor(private router: Router, private apiService: ApiService, private formBuilder: FormBuilder) {
-
     this.getMenuData();
     this.getProgram();
     this.getUser();
+
+  }
+  paidDetailsValue(dateRange: DateRangeModel) {
+    this.setTotalPay={};
+    this.apiService.getPaidDetails().subscribe(res => {
+      for (let item of res) {
+        if (item.paidDate >= dateRange.startDay && item.paidDate <= dateRange.endDay) {
+          if (this.setTotalPay[item.userId] == undefined) this.setTotalPay[item.userId] = 0;
+          this.setTotalPay[item.userId] += parseFloat(item.paidAmount);
+
+        }
+
+      }
+
+    })
   }
   getProgram() {
     this.apiService.getProgramData().subscribe(res => {
@@ -53,6 +76,9 @@ export class PaymentComponent implements OnInit {
     })
   }
   getRange(dateRange: DateRangeModel) {
+
+    this.paidDetailsValue(dateRange);
+
     this.userPaymentCalculationData = [];
     this.apiService.userOrderList().subscribe(res => {
       for (let item of res) {
@@ -61,6 +87,7 @@ export class PaymentComponent implements OnInit {
         }
       }
     })
+
   }
   getUserName(user: OrderListModel) {
     var userId = user.userId;
@@ -71,6 +98,7 @@ export class PaymentComponent implements OnInit {
       count: 1
     }
 
+
     for (let item of this.setMenu) {
       if (item.id == user.itemId) {
         todaysMealData.id = item.id;
@@ -80,10 +108,11 @@ export class PaymentComponent implements OnInit {
         break;
       }
     }
+
     for (let id of userId) {
 
       let userCostValue: PaymentCalculationModel = {
-        id: "", userName: "", email: "", totalCost: 0, totalMeal: 0, teamName: "",
+        id: "", userName: "", email: "", totalCost: 0, totalMeal: 0, teamName: "", totalPaid: 0,
         meal: []
       };
       let usercostIndex = this.userPaymentCalculationData.findIndex(usercostId => usercostId.id === id)
@@ -96,7 +125,10 @@ export class PaymentComponent implements OnInit {
         userCostValue.teamName = user.teamName
         userCostValue.totalMeal = 1,
           userCostValue.totalCost = todaysMealData.mealRate,
-          this.userPaymentCalculationData.push(userCostValue);
+          userCostValue.totalPaid = 0;
+          if(this.setTotalPay[user.id]!=undefined)userCostValue.totalPaid=this.setTotalPay[user.id];
+
+        this.userPaymentCalculationData.push(userCostValue);
       }
       else {
         this.userPaymentCalculationData[usercostIndex].totalCost += todaysMealData.mealRate
@@ -123,9 +155,5 @@ export class PaymentComponent implements OnInit {
         this.userPaymentCalculationData[usercostIndex].meal[index].cost += todaysMealData.mealRate;
       }
     }
-    console.log(this.userPaymentCalculationData);
-
-
   }
-
 }
